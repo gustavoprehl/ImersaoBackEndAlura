@@ -1,8 +1,9 @@
 import express from "express";
-import routes from "./src/routes/postsRoute";
+import routes from "./src/routes/postsRoute.js";
 
 const app = express();
-routes(app);
+app.use(express.static("uploads"));
+routes(app)
 
 app.listen(3000, () => {
     console.log("Listening server");
